@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "H:\\Code\\Steve\\Celo\\DemeterCoin-celo\\Website\\contracts\\contracts\\CeloERC721.sol": {
-      "lastModificationDate": 1670168656815,
-      "contentHash": "7069f50a37fa4ce268fb563e4ec5a3e0",
+      "lastModificationDate": 1670187306422,
+      "contentHash": "f3f353adf90f10dde5173261f545227b",
       "sourceName": "contracts/CeloERC721.sol",
       "solcConfig": {
         "version": "0.8.6",
