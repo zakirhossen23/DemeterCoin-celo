@@ -97,6 +97,9 @@ export default function AuctionNFT(user) {
                                 isvoted= true;
                             }                            
                         }
+                        if (value2[0].toLowerCase() === window.ethereum.selectedAddress.toLowerCase()){
+                            isvoted= false;
+                        }
                         arr.push({
                             eventId: porjectID,
                             Title: object.properties.Title.description,
