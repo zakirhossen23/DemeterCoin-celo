@@ -77,24 +77,19 @@ export default function AuctionNFT(user) {
         try {
             if (contract && id) {
                 setgrantId(Number(id));
-                const value = await contract._GrantEventURIs(id);
+                const value = await contract._GrantEventURIs(Number(id));
 
                 const AllProjects = await contract.getSearchedProjectByGrantID(Number(id));
                 const arr = [];
                 for (let i = 0; i < AllProjects.length; i++) {
-                    let porjectID = Number(AllProjects[i]) + 1
-                    const value2 = await contract.eventURI(porjectID);
+                    let porjectID = Number(AllProjects[i])
+                    let value2 =   value2=  await contract.eventURI(porjectID);
+                 
                     let totalEarned = await contract.getEventRaised(porjectID);
                     const votes = await contract.getSearchedGrantVoteProject(Number(id),porjectID);
                     if (value2) {
                         const object = JSON.parse(value2[1]);
-                        var c = new Date(object.properties.Date.description).getTime();
-                        var n = new Date().getTime();
-                        var d = c - n;
-                        var s = Math.floor((d % (1000 * 60)) / 1000);
-                        if (s.toString().includes("-")) {
-                            continue;
-                        }
+                      
                         let isvoted = false;
                         for (let index = 0; index < votes.length; index++) {
                             const element = votes[index];
@@ -117,7 +112,7 @@ export default function AuctionNFT(user) {
                 arr.sort(function(a, b){return a.votecount - b.votecount});
                 setList(arr);
 
-
+                console.log(arr);
                 if (document.getElementById("Loading"))
                     document.getElementById("Loading").style = "display:none";
 

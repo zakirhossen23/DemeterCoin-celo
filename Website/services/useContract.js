@@ -21,6 +21,7 @@ export default function useContract(contractName) {
 				switch (contractName) {
 					case 'ERC721':
 						contract.contract = ERC721Singleton(signer);
+						window.contract = contract.contract;
 						break;
 					default:
 						console.log('Invalid contract');
